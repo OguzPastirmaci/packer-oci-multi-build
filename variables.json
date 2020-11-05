@@ -6,6 +6,9 @@
     "key_file": "",
     "iad_subnet_ocid": "",
     "phx_subnet_ocid": "",
+    "vm_shape": "",
+    "iad_availability_domain": "",
+    "phx_availability_domain": "",
     "iad_base_ol78_platform_image_ocid": "ocid1.image.oc1.iad.aaaaaaaapulaxjedwo2y3koeli6zq6evql6rropyxpni3wu44i2rbffgxgza",
     "phx_base_ol78_platform_image_ocid": "ocid1.image.oc1.phx.aaaaaaaauhf5hmgjm5vb7c5kllxgydveooeiyiwxa222k62tcjr4bhucyjha"
 }
