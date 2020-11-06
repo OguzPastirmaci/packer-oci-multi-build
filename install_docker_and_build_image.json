@@ -1,0 +1,50 @@
+{
+    "builders": [
+        {
+            "name": "IAD",
+            "type": "oracle-oci",
+            "tenancy_ocid": "{{user `tenancy_ocid`}}",
+            "user_ocid": "{{user `user_ocid`}}",
+            "compartment_ocid": "{{user `compartment_ocid`}}",
+            "fingerprint": "{{user `fingerprint`}}",
+            "key_file": "{{user `key_file`}}",
+            "region": "us-ashburn-1",
+            "availability_domain": "{{user `iad_availability_domain`}}",
+            "subnet_ocid": "{{user `iad_subnet_ocid`}}",
+            "base_image_ocid": "{{user `iad_base_ol78_platform_image_ocid`}}",
+            "image_name": "install_docker_and_build_image_iad",
+            "shape": "{{user `vm_shape`}}",
+            "ssh_username": "opc",
+            "ssh_timeout": "10m"
+        },
+        {
+            "name": "PHX",
+            "type": "oracle-oci",
+            "tenancy_ocid": "{{user `tenancy_ocid`}}",
+            "user_ocid": "{{user `user_ocid`}}",
+            "compartment_ocid": "{{user `compartment_ocid`}}",
+            "fingerprint": "{{user `fingerprint`}}",
+            "key_file": "{{user `key_file`}}",
+            "region": "us-phoenix-1",
+            "availability_domain": "{{user `phx_availability_domain`}}",
+            "subnet_ocid": "{{user `phx_subnet_ocid`}}",
+            "base_image_ocid": "{{user `phx_base_ol78_platform_image_ocid`}}",
+            "image_name": "install_docker_and_build_image_phx",
+            "shape": "{{user `vm_shape`}}",
+            "ssh_username": "opc",
+            "ssh_timeout": "10m"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo yum-config-manager --enable *addons",
+                "sudo yum install -y docker-engine",
+                "sudo usermod -a -G docker $USER",
+                "sudo systemctl restart docker"
+            ],
+            "pause_before": "10s"
+        }
+    ]
+}
