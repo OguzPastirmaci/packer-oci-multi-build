@@ -44,7 +44,7 @@
                 "sudo usermod -a -G docker $USER",
                 "sudo systemctl restart docker"
             ],
-            "pause_before": "10s"
+            "pause_before": "15s"
         }
     ]
 }
