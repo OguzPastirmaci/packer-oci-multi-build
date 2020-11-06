@@ -23,14 +23,14 @@ Here's the high level overview of the steps:
 
 https://learn.hashicorp.com/tutorials/packer/getting-started-install
 
-## 2 - Copy this repository locally
+### 2 - Copy this repository locally
 ```bash
 git clone https://github.com/OguzPastirmaci/packer-oci-multi-build.git
 
 cd packer-oci-multi-build
 ```
 
-## 3 - Open variables.json and change the values
+### 3 - Open variables.json and change the values
 Open `variables.json` with an editor and change the values.
 
 All of these values can also be put in the Packer json files as well but keeping them in a separate variables file makes editing easier.
@@ -55,3 +55,9 @@ The `iad_base_ol78_platform_image_ocid` and `phx_base_ol78_platform_image_ocid` 
     "phx_availability_domain": ""
 }
 ```
+
+### 4 - Run the shell script
+```bash
+sh build_multiple_images.sh
+```
+
