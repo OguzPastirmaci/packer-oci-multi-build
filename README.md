@@ -23,7 +23,7 @@ Here's the high level overview of the steps:
 
 https://learn.hashicorp.com/tutorials/packer/getting-started-install
 
-### 2 - Copy this repository locally
+### 2 - Clone repository
 ```bash
 git clone https://github.com/OguzPastirmaci/packer-oci-multi-build.git
 
