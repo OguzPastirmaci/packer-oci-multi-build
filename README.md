@@ -1,9 +1,25 @@
 # Building multiple images with Packer
 
+Here's the high level overview of the steps:
+
+1 - Packer starts Oracle Linux 7.8 VMs in Ashburn and Phoenix regions.
+
+2 - Packer installs Docker on the started VMs in Ashburn and Phoenix regions.
+
+3 - Packer creates OCI custom images (Docker installed on Oracle Linux 7.8) in Ashburn and Phoenix regions.
+
+4 - Shell script gets the image OCIDs created in step 3 from Packer output.
+
+5 - Packer uses the images created in step 3 as new base images and starts new VMs in Ashburn and Phoenix.
+
+6 - Packer pulls oraclelinux:7 container to VMs.
+
+7 - Packer creates OCI custom images (Docker installed on Oracle Linux 7.8 and oraclelinux:7 container is pulled) in Ashburn and Phoenix regions.
 
 
 
-## 1 - Install Packer
+## Step by step guide
+### 1 - Install Packer
 
 https://learn.hashicorp.com/tutorials/packer/getting-started-install
 
