@@ -60,4 +60,13 @@ The `iad_base_ol78_platform_image_ocid` and `phx_base_ol78_platform_image_ocid` 
 ```bash
 sh build_multiple_images.sh
 ```
+Packer will show you step by step what it's doing. When the script finishes running, you should see 2 custom images in Ashburn and Phoenix regions. The default names in the templates are:
 
+```
+install_docker_and_build_image_iad
+install_docker_and_build_image_phx
+pull_container_and_build_image_iad
+pull_container_and_build_image_phx
+```
+
+You can change the image names by changing `"image_name"` values in `install_docker_and_build_image.json` and `pull_container_and_build_image.json` to something different.
